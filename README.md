@@ -23,7 +23,7 @@
 | **Линтинг** | ESLint (конфиг `plugin:vue/vue3-essential`) |
 | **Стилизация** | Sass (SCSS) |
 | **Транспиляция** | Babel |
-| **Дополнительно** | TypeScript (только для конфигов, `ts-node`) |
+| **Дополнительно** | TypeScript  |
 
 ---
 
