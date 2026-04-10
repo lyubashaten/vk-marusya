@@ -1,0 +1,32 @@
+@use './variables' as vars;
+
+.preloader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: transparent;
+  box-sizing: border-box;
+  border: 4px solid vars.$default-color-btn-dark;
+  border-color: vars.$title-color;
+  animation: spinFade 1.5s linear infinite;
+  z-index: 99999;
+}
+
+@keyframes spinFade {
+  0% {
+    transform: rotate(0deg);
+    border-top-color: vars.$default-color-btn-dark;
+  }
+
+  50% {
+    border-top-color: vars.$default-color-btn-dark;
+  }
+
+  100% {
+    transform: rotate(360deg);
+    border-top-color: vars.$title-color;
+  }
+}
