@@ -1,0 +1,98 @@
+@use './_variables.scss' as vars;
+
+.btn {
+    font-family: vars.$font-family-bold;
+    font-weight: vars.$font-weight-bold;
+    font-size: 18px;
+    line-height: 24px;
+    background-color: vars.$default-color-btn-dark;
+    color: vars.$title-color;
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    border-radius: 28px;
+    padding: 16px 48px;
+
+    &:hover {
+        background-color: vars.$disable-color-btn;
+    }
+
+    &:focus-visible {
+        background-color: vars.$disable-color-btn;
+    }
+
+    &:disabled {
+        background-color: vars.$disable-color-btn;
+        color: vars.$disable-color;
+    }
+
+    @media(max-width: 560px) {
+        & {
+            padding: 16px 38px;
+        }
+    }
+}
+
+.btn-light {
+    background-color: vars.$hover-color-btn;
+
+    &:hover {
+        background-color: vars.$title-color;
+        color: vars.$descr-color-dark;
+    }
+
+    &:focus-visible {
+        background-color: vars.$title-color;
+        color: vars.$descr-color-dark;
+    }
+
+    &:disabled {
+        background-color: vars.$hover-disable-color-btn;
+        color: vars.$disable-color;
+    }
+}
+
+.btn-small {
+    padding: 16px 22px;
+}
+
+.btn-close {
+    position: absolute;
+    width: 48px;
+    height: 48px;
+    top: 0;
+    right: -70px;
+    background-color: vars.$title-color;
+    border: none;
+    border-radius: 24px;
+    cursor: pointer;
+    padding: 12px;
+    color: vars.$descr-color-dark;
+    font-size: 0;
+
+    &::before,
+    &::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: 24px;
+        height: 2px;
+        background-color: currentColor;
+        border-radius: 1px;
+        transform-origin: center;
+    }
+
+    &::before {
+        transform: translate(-50%, -50%) rotate(45deg);
+    }
+
+    &::after {
+        transform: translate(-50%, -50%) rotate(-45deg);
+    }
+
+    @media (max-width: 610px) {
+        & {
+            top: 8px;
+            right: 9px;
+        }
+    }
+}

@@ -1,0 +1,113 @@
+@use '../scss/variables' as vars;
+
+.personal-account {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 62px 0;
+
+    &__title {
+        font-family: vars.$font-family-bold;
+        font-weight: vars.$font-weight-bold;
+        font-size: 48px;
+        line-height: 56px;
+        color: vars.$title-color;
+        margin: 0;
+        margin-bottom: 72px;
+        padding: 0;
+    }
+
+    &__links {
+        display: flex;
+        flex-direction: row;
+        gap: 64px;
+        margin-bottom: 61px;
+    }
+
+    &__link {
+        position: relative;
+        font-family: vars.$font-family-refular;
+        font-weight: vars.$font-weight-regular;
+        font-size: 24px;
+        line-height: 32px;
+        color: vars.$title-color;
+        padding-left: 32px;
+        padding-bottom: 8px;
+
+        &:hover,
+        &:focus-visible {
+            border-bottom: 1.5px solid vars.$link-hover-color;
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            width: 24px;
+            height: 24px;
+            left: -4px;
+            top: 0;
+            background-repeat: no-repeat;
+        }
+
+        &--favorites::before {
+            left: 1px;
+            top: 5px;
+            background-image: url(../img/svg/heart.svg);
+        }
+
+        &--settings::before {
+            background-image: url(../img/svg/human.svg);
+        }
+    }
+
+    &__links-favorites {
+        display: none;
+    }
+
+    &__links-settings {
+        display: none;
+    }
+
+    @media (max-width: 645px) {
+        &__content {
+            margin: 19px 0;
+        }
+
+        & {
+            margin: 22px 0;
+        }
+
+        &__title {
+            font-size: 24px;
+            line-height: 32px;
+            margin-bottom: 48px;
+        }
+
+        &__links {
+            gap: 29px;
+            margin-bottom: 19px;
+        }
+
+        &__links-favorites-big {
+            display: none;
+        }
+
+        &__links-favorites {
+            display: flex;
+        }
+
+        &__links-settings-big {
+            display: none;
+        }
+
+        &__links-settings {
+            display: flex;
+        }
+    }
+
+    @media (max-width: 410px) {
+        &__links {
+            margin-bottom: 19px;
+        }
+    }
+}

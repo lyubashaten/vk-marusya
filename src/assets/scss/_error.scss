@@ -1,0 +1,20 @@
+@use './variables' as vars;
+
+.error.authorization__icon input {
+  border-color: vars.$error-color;
+}
+
+::v-deep .icon-error.authorization__icon--letter::before {
+  background-image: url('../img/account-set/letter-error.svg');
+  opacity: 1;
+}
+
+::v-deep .icon-error.authorization__icon--key::before {
+  background-image: url('../img/account-set/key-error.svg');
+  opacity: 1;
+}
+
+::v-deep .icon-error.authorization__icon--human::before {
+  background-image: url('../img/account-set/human-error.svg');
+  opacity: 1;
+}

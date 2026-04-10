@@ -1,0 +1,161 @@
+@use '../scss/variables' as vars;
+
+.top {
+    margin: 40px 0 160px;
+
+    &__title {
+        font-family: vars.$font-family-bold;
+        font-weight: vars.$font-weight-bold;
+        font-size: 40px;
+        line-height: 48px;
+        color: vars.$title-color;
+        margin: 0;
+        margin-bottom: 64px;
+    }
+
+    &__list {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        grid-auto-rows: auto;
+        gap: 58px 40px;
+        justify-items: center;
+    }
+
+    &__item {
+        position: relative;
+        width: 100%;
+        max-width: 224px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__position {
+        position: absolute;
+        top: -4%;
+        left: -5%;
+        font-family: vars.$font-family-bold;
+        font-weight: vars.$font-weight-bold;
+        font-size: 24px;
+        line-height: 32px;
+        border-radius: 50px;
+        color: #6A5DC2;
+        background-color: vars.$title-color;
+        padding: 8px 24px;
+    }
+
+    &__poster {
+        width: 100%;
+        max-width: 224px;
+        border-radius: 16px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        margin-bottom: 8px;
+        box-shadow: 0px 0px 80px 0px rgba(255, 255, 255, 0.33);
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        transition: transform 0.3 ease-in-out;
+
+        &:hover,
+        &:focus-visible {
+            transform: scale(1.25);
+        }
+    }
+
+    @media (max-width: 1236px) {
+        &__list {
+            gap: 40px 30px;
+        }
+
+        &__title {
+            font-size: 38px;
+            margin-bottom: 50px;
+        }
+    }
+
+    @media (max-width: 990px) {
+        &__list {
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 30px 20px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        &__list {
+            gap: 30px 20px;
+        }
+
+        &__title {
+            font-size: 38px;
+            margin-bottom: 30px;
+        }
+
+        &__item {
+            max-width: 180px;
+        }
+
+        &__poster {
+            max-width: 180px;
+        }
+    }
+
+    @media (max-width: 560px) {
+        & {
+            margin: 56px 0 30px;
+        }
+
+        &__title {
+            font-size: 24px;
+            line-height: 32px;
+            margin-bottom: 18px;
+        }
+
+        &__list {
+            display: flex;
+            flex-wrap: nowrap;
+            overflow-x: auto;
+            gap: 41px;
+            justify-content: flex-start;
+            align-items: flex-start;
+            padding: 20px 19px;
+            margin: 0 -19px;
+            -webkit-overflow-scrolling: touch; 
+
+            &::-webkit-scrollbar {
+                display: none;
+            }
+
+            -ms-overflow-style: none; 
+            scrollbar-width: none; 
+        }
+
+    }
+
+    &__item {
+        width: 224px;
+        flex: 0 0 auto;
+
+        max-width: none;
+        margin-right: 0;
+    }
+
+    &__position {
+        left: -11px;
+        top: -12px;
+        padding: 8px 24px;
+        z-index: 2;
+    }
+
+    &__poster {
+        max-width: 224px;
+        height: 336px;
+        max-width: none;
+        object-fit: cover;
+        box-shadow: 0px 0px 23px 0px rgba(255, 255, 255, 0.33);
+        margin-bottom: 0;
+
+        &:hover,
+        &:focus-visible {
+            transform: none;
+        }
+    }
+}

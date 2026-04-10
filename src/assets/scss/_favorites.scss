@@ -1,0 +1,151 @@
+@use '../scss/variables' as vars;
+
+
+.favorites {
+    &__wrap {
+        margin: 0 0 40px;
+    }
+
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: auto;
+        gap: 59px 40px;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    &__item {
+        position: relative;
+        display: flex;
+        justify-content: center;
+    }
+
+    &__poster-link {
+        display: block;
+        width: 100%;
+    }
+
+    &__poster-img {
+        width: 100%;
+        max-width: 224px;
+        height: 336px;
+        border: 1px solid #FFFFFF;
+        box-shadow: 0px 0px 80px 0px rgba(255, 255, 255, 0.33);
+        border-radius: 16px;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+    }
+
+    &__close-btn {
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        top: -18px;
+        right: -28px;
+        background-color: vars.$title-color;
+        border: none;
+        border-radius: 24px;
+        cursor: pointer;
+        padding: 12px;
+        color: vars.$descr-color-dark;
+        font-size: 0;
+        z-index: 100;
+
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: 19px;
+            height: 2px;
+            background-color: currentColor;
+            border-radius: 1px;
+            transform-origin: center;
+        }
+
+        &::before {
+            transform: translate(-50%, -50%) rotate(45deg);
+        }
+
+        &::after {
+            transform: translate(-50%, -50%) rotate(-45deg);
+        }
+    }
+
+    &__item:hover &__close-btn {
+        opacity: 1;
+    }
+
+    @media (max-width: 1200px) {
+        &__list {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+
+    @media (max-width: 992px) {
+        &__list {
+            gap: 59px 26px;
+        }
+
+        &__poster-img {
+            max-width: 196px;
+            height: 296px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        &__list {
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+    }
+
+    @media (max-width: 596px) {
+        &__list {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 59px 66px;
+        }
+
+        &__poster-img {
+            max-width: 224px;
+            height: 336px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        &__list {
+            width: 100%;
+            display: flex;
+            flex-wrap: nowrap;
+            overflow-x: auto;
+            gap: 44px;
+            justify-content: flex-start;
+            align-items: flex-start;
+            padding: 20px 19px;
+            margin: 0 -19px;
+            -webkit-overflow-scrolling: touch;
+
+            &::-webkit-scrollbar {
+                display: none;
+            }
+
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        &__item {
+            width: 224px;
+            flex: 0 0 auto;
+
+            max-width: none;
+            margin-right: 0;
+        }
+
+        &__poster-img {
+            box-shadow: 0px 0px 30px 0px rgba(255, 255, 255, 0.33);
+        }
+    }
+}

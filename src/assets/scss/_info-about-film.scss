@@ -1,0 +1,102 @@
+@use '../scss/variables' as vars;
+
+.page-film {
+    margin: 41px 0 0;
+
+    &__title {
+        font-family: vars.$font-family-bold;
+        font-weight: vars.$font-weight-bold;
+        font-size: 40px;
+        line-height: 48px;
+        color: vars.$title-color;
+        margin: 0 0 63px 0;
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    &__name {
+        font-family: vars.$font-family-refular;
+        font-weight: vars.$font-weight-regular;
+        font-size: 18px;
+        line-height: 24px;
+        color: vars.$title-color;
+    }
+
+    &__after {
+        display: inline-block;
+        margin: 0 8px;
+        border-bottom: 1px dashed vars.$disable-color;
+    }
+
+    &__after-1 {
+        width: 177px;
+    }
+
+    &__after-2 {
+        width: 244px;
+    }
+
+    &__after-3 {
+        width: 241px;
+    }
+
+    &__after-4 {
+        width: 231px;
+    }
+
+    &__after-5 {
+        width: 215px;
+    }
+
+    &__after-6 {
+        width: 239px;
+    }
+
+    @media(max-width: 842px) {
+        &__title {
+            margin-bottom: 33px;
+        }
+
+        &__item {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        &__after {
+            display: none;
+        }
+    }
+
+    @media(max-width: 560px) {
+        & {
+            margin: 58px 0 0;
+        }
+
+        &__title {
+            font-size: 24px;
+            line-height: 32px;
+            margin-bottom: 38px;
+        }
+
+        &__list {
+            gap: 13px
+        }
+
+        &__item {
+            gap: 7px;
+        }
+
+        &__name {
+            font-size: 14px;
+            line-height: 20px;
+        }
+    }
+}

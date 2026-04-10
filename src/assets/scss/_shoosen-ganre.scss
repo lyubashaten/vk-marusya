@@ -1,0 +1,207 @@
+@use './variables' as vars;
+
+.shoosen-ganre {
+    margin: 64px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__wrapper {
+        width: 100%;
+        margin-bottom: 64px;
+    }
+
+    &__wrap {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 16px;
+        margin-bottom: 60px;
+    }
+
+    &__btn-close {
+        background-color: transparent;
+        padding: 0;
+        border: none;
+        padding-left: 38px;
+        width: 13px;
+        height: 24px;
+        background-image: url('../img/svg/close-logo.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+    }
+
+    &__title {
+        font-family: vars.$font-family-bold;
+        font-weight: vars.$font-weight-bold;
+        font-size: 48px;
+        line-height: 56px;
+        color: vars.$title-color;
+        text-transform: capitalize;
+        margin: 0;
+    }
+
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: auto;
+        gap: 64px 40px;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    &__item {
+        max-width: 224px;
+        height: 336px;
+        transition: transform 0.3 ease-in-out;
+
+        &:hover,
+        &:focus-visible {
+            transform: scale(1.25);
+        }
+    }
+
+    &__img {
+        max-width: 224px;
+        height: 336px;
+        border-radius: 16px;
+        box-shadow: 0px 0px 80px 0px rgba(255, 255, 255, 0.33);
+        width: 100%;
+        object-fit: cover;
+    }
+
+    &__btn-open {
+        display: flex;
+        justify-content: center;
+    }
+
+    @media (max-width: 1200px) {
+        &__list {
+            grid-template-columns: repeat(4, 1fr);
+            gap: 48px 32px;
+        }
+        
+        &__item,
+        &__img {
+            max-width: 200px;
+            height: 300px;
+        }
+    }
+
+    @media (max-width: 992px) {
+        margin: 48px 0;
+
+        &__title {
+            font-size: 40px;
+            line-height: 48px;
+        }
+
+        &__list {
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px 24px;
+        }
+
+        &__item,
+        &__img {
+            max-width: 180px;
+            height: 270px;
+        }
+
+        &__wrapper {
+            margin-bottom: 48px;
+        }
+
+        &__wrap {
+            margin-bottom: 48px;
+            gap: 24px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        margin: 40px 0;
+
+        &__title {
+            font-size: 32px;
+            line-height: 40px;
+        }
+
+        &__list {
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px 20px;
+        }
+
+        &__item,
+        &__img {
+            max-width: 160px;
+            height: 240px;
+
+        }
+
+        &__wrapper {
+            margin-bottom: 40px;
+        }
+
+        &__wrap {
+            margin-bottom: 40px;
+            gap: 20px;
+        }
+    }
+
+    @media (max-width: 560px) {
+        &__list {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px 16px;
+        }
+    }
+
+    @media (max-width: 395px) {
+        margin: 23px 0 64px;
+
+        &__btn-close {
+            width: 10px;
+            height: 17px;
+            padding-left: 31px;
+        }
+
+        &__title {
+            font-size: 24px;
+            line-height: 33px;
+            text-align: center;
+        }
+
+        &__list {
+            grid-template-columns: 1fr;
+            gap: 24px 16px;
+        }
+
+        &__item,
+        &__img {
+            max-width: 335px;
+            height: 502px;
+
+            &:hover,
+            &:focus-visible {
+                transform: none;
+            }
+        }
+
+        &__wrapper {
+            margin-bottom: 38px;
+        }
+
+        &__wrap {
+            margin-bottom: 39px;
+            gap: 11px;
+            text-align: center;
+        }
+
+        &__btn-open {
+            width: 100%;
+        }
+    }
+
+
+
+}

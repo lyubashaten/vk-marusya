@@ -1,0 +1,45 @@
+@use './_variables.scss' as vars;
+@use '../scss/fonts';
+
+body {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  background: linear-gradient(178.73deg, rgba(39, 135, 245, 0.18) -17.53%, rgba(163, 147, 245, 0.18) 131.74%),
+    linear-gradient(180deg, #000000 0%, rgba(39, 36, 36, 0.7) 100%);
+  max-width: 1440px;
+  min-height: 100vh;
+  margin: 0 auto;
+  font-family: 'PlayRegular', sans-serif;
+  overflow-x: hidden;
+}
+
+#app {
+  min-height: 100vh;
+  padding: 0 80px;
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  text-decoration: none;
+}
+
+@media(max-width: 1130px) {
+  #app {
+    padding: 0 40px;
+  }
+}
+
+@media(max-width: 930px) {
+  #app {
+    padding: 0 25px
+  }
+}
+
+@media(max-width: 560px) {
+  #app {
+    padding: 0 19px;
+    ;
+  }
+}

@@ -1,0 +1,223 @@
+@use '../scss/variables' as vars;
+
+.trailer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(10, 11, 11, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99;
+
+  &__wrapper {
+    position: relative;
+    background: vars.$default-color-btn-dark;
+    max-width: 960px;
+    width: 90vw;
+    aspect-ratio: 16 / 9;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+  }
+
+  &__btn-close {
+    width: 48px;
+    height: 48px;
+    top: 0;
+    right: -70px;
+  }
+
+  &__content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+  }
+
+  &__overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 19px;
+      bottom: 24px;
+      width: 96%;
+      height: 80px;
+      background-color: vars.$descr-color-dark;
+      opacity: 0.5;
+      z-index: 2;
+    }
+  }
+
+  &__title {
+    position: absolute;
+    left: 6%;
+    bottom: 9%;
+    font-family: vars.$font-family-bold;
+    font-weight: vars.$font-weight-bold;
+    font-size: 24px;
+    line-height: 32px;
+    color: vars.$title-color;
+    z-index: 1000;
+
+  }
+
+  &__play-pause-btn {
+    background-color: transparent;
+    border: none;
+  }
+
+  &__icon {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 40px;
+    height: 30px;
+    cursor: pointer;
+    user-select: none;
+    background-color: vars.$title-color;
+    border-radius: 40px;
+    transition: opacity 0.3s ease;
+    transform: translate(-50%, -50%);
+    padding: 26px 20px;
+    z-index: 100;
+  }
+
+  &__video {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: black;
+    object-fit: contain;
+
+  }
+
+  @media (max-width: 1180px) {
+    &__btn-close {
+      top: 8px;
+      right: 8px;
+      z-index: 10000;
+    }
+  }
+
+  @media (max-width: 932px) {
+    &__overlay {
+      &::after {
+        left: 0;
+        bottom: 19px;
+        width: 100%;
+        height: 80px;
+      }
+    }
+  }
+
+  @media (max-width: 730px) {
+    &__title {
+      font-size: 20px;
+    }
+
+    &__overlay {
+      &::after {
+        bottom: 9px;
+      }
+    }
+  }
+
+  // портретная ориентация
+  @media (max-width: 580px) and (orientation: portrait) {
+    &__wrapper {
+      width: 100vw;
+      aspect-ratio: 16 / 9;
+      border-radius: 0;
+      border: none;
+    }
+
+    &__icon {
+      width: 24px;
+      height: 24px;
+      padding: 20px 20px;
+    }
+
+    &__btn-close {
+      top: 8px;
+      right: 9px;
+      width: 33px;
+      height: 31px;
+      padding: 8px;
+
+      &::before,
+      &::after {
+        width: 16px;
+      }
+    }
+
+    &__title {
+      font-size: 18px;
+      line-height: 24px;
+      bottom: -23%;
+      left: 10%;
+    }
+
+    &__overlay {
+      &::after {
+        left: 0;
+        bottom: -98px;
+        width: 100%;
+        height: 96px;
+      }
+    }
+  }
+// ландшафтная ориентация
+  @media (max-width: 580px) and (orientation: landscape) {
+    &__wrapper {
+      width: 553px;
+      height: 100vw;
+      max-width: 553px;
+      max-height: 100vh;
+      border-radius: 0;
+      border: none;
+      transform: rotate(90deg);
+      transform-origin: center center;
+    }
+
+    &__icon {
+      width: 26px;
+      height: 21px;
+      padding: 21px 19px;
+    }
+
+    &__btn-close {
+      top: 15px;
+      right: 17px;
+      width: 32px;
+      height: 30px;
+
+      &::after,
+      &::before {
+        width: 18px;
+      }
+    }
+
+    &__title {
+      font-size: 18px;
+      line-height: 24px;
+      bottom: 6%;
+      left: 6%;
+    }
+
+    &__overlay {
+      &::after {
+        left: 0;
+        bottom: 0;
+        height: 72px;
+      }
+    }
+  }
+}

@@ -1,0 +1,176 @@
+@use '../scss/variables' as vars;
+
+.search-film {
+    position: absolute;
+    right: 19%;
+    top: 84px;
+    width: 559px;
+    border-radius: 8px;
+    background-color: vars.$default-color-btn-dark;
+    z-index: 10000;
+
+    &__list {
+        margin: 0;
+        padding: 8px;
+        list-style: none;
+    }
+
+    &__link {
+        display: flex;
+        flex-direction: row;
+        gap: 16px;
+        padding: 20px 8px;
+
+        &:hover {
+            border: 1px solid vars.$disable-color;
+            border-radius: 6px;
+        }
+    }
+
+    &__poster {
+        width: 40px;
+        height: 52px;
+    }
+
+    &__wrap-info {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    &__wrap-basic-data {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 12px;
+    }
+
+    &__rating {
+        display: flex;
+        flex-direction: row;
+        gap: 3px;
+        font-size: 12px;
+        border-radius: 16px;
+        padding: 2px 6px;
+        color: vars.$title-color;
+    }
+
+    &__text {
+        font-family: vars.$font-family-refular;
+        font-weight: vars.$font-weight-regular;
+        font-size: 14px;
+        line-height: 20px;
+        color: vars.$title-color;
+    }
+
+    &__title {
+        font-family: vars.$font-family-bold;
+        font-weight: vars.$font-weight-bold;
+        font-size: 18px;
+        line-height: 24px;
+        color: vars.$title-color;
+        margin: 0;
+        padding: 0;
+    }
+
+    @media (max-width: 800px) {
+        & {
+            position: fixed;
+            top: 84px;
+            right: 0%;
+        }
+    }
+
+    @media (max-width: 670px) {
+        & {
+            top: 84px;
+            right: 0%;
+        }
+    }
+
+    @media (max-width: 617px) {
+        & {
+            position: fixed;
+            width: 459px;
+            top: 84px;
+            right: 0%;
+        }
+    }
+
+    @media (max-width: 470px) {
+        & {
+            width: 90%;
+            height: 378px;
+            position: fixed;
+            top: 73px;
+            right: 50%;
+            transform: translateX(50%);
+            scrollbar-width: none;
+            &::-webkit-scrollbar {
+                display: none;
+            }
+        }
+
+        &__list {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            overflow-x: auto;
+            margin: 0;
+            padding: 0 0 0 22px;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+            &::-webkit-scrollbar {
+                display: none;
+            }
+        }
+
+        &__link {
+            width: 220px;
+            height: 330px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            padding: 23px 0 0 0;
+        }
+
+        &__poster {
+            width: 158px;
+            height: 206px;
+        }
+
+        &__wrap-info {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        &__wrap-basic-data {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 12px;
+        }
+
+        &__rating {
+            display: flex;
+            flex-direction: row;
+            gap: 3px;
+            font-size: 12px;
+            border-radius: 16px;
+            padding: 2px 5px;
+        }
+
+        &__text {
+            font-size: 14px;
+            line-height: 20px;
+        }
+
+        &__title {
+            font-size: 18px;
+            line-height: 24px;
+            margin: 0;
+            padding: 0;
+        }
+    }
+}

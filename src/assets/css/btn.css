@@ -1,0 +1,41 @@
+.btn {
+  font-family: "PlayBold", sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 24px;
+  background-color: #393B3C;
+  color: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  border-radius: 28px;
+  padding: 16px 48px;
+}
+.btn:hover {
+  background-color: #747474;
+}
+.btn:focus-visible {
+  background-color: #747474;
+}
+.btn:disabled {
+  background-color: #747474;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.btn-light {
+  background-color: #67A5EB;
+}
+.btn-light:hover {
+  background-color: #FFFFFF;
+  color: #000000;
+}
+.btn-light:focus-visible {
+  background-color: #FFFFFF;
+  color: #000000;
+}
+.btn-light:disabled {
+  background-color: #45526E;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.btn-small {
+  padding: 16px 22px;
+}/*# sourceMappingURL=btn.css.map */
