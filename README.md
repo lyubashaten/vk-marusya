@@ -1,3 +1,5 @@
+[![Live Demo](https://img.shields.io/badge/🚀-Live_Demo-brightgreen?style=for-the-badge)](https://lyubashaten.github.io/vk-marusya/)
+
 # VK Маруся
 
 «VK Маруся» — это бесплатная платформа для поиска и оценки фильмов.
