@@ -4,6 +4,7 @@ import vue from '@vitejs/plugin-vue';
 
 export default defineConfig({
   plugins: [vue()],
+  base: '/vk-marusya/',
   server: {
     port: 3000,
     host: true,
