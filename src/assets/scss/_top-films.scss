@@ -128,9 +128,7 @@
             scrollbar-width: none; 
         }
 
-    }
-
-    &__item {
+&__item {
         width: 224px;
         flex: 0 0 auto;
 
@@ -158,4 +156,7 @@
             transform: none;
         }
     }
+    }
+
+    
 }
